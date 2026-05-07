@@ -11,7 +11,7 @@
 # Site Intelligence Agent
 #### An AI assistant that gives every field worker access to expert knowledge — and knows when to say "I don't know."
 
-*Nishchay Vishwanath · Cornell MEM · Spring 2026*
+*Nishchay Vishwanath · Cornell · Spring 2026*
 
 ---
 
@@ -316,3 +316,77 @@ Here's what I actually learned: the hardest part wasn't building the AI. It was 
 ---
 
 *End.*
+
+---
+---
+
+## PART 3: REFERENCES
+
+*Every number in this presentation has a source. This slide exists so no claim goes uncited.*
+
+---
+
+### Slide 14 — References
+
+#### Safety & Workforce Statistics
+
+**[1] 50,000 injuries / 120 deaths per year from uncontrolled hazardous energy**
+> U.S. Occupational Safety and Health Administration (OSHA). *Control of Hazardous Energy (Lockout/Tagout).* OSHA 3120, 2002.
+> Direct quote: *"Failure to control hazardous energy accounts for nearly 10 percent of the serious accidents in many industries. Annually, 120 workers are killed and 50,000 are injured while servicing equipment."*
+> Available at: osha.gov — Standard 29 CFR 1910.147
+
+**[2] 24 days average lost worktime for lockout/tagout incidents**
+> U.S. Bureau of Labor Statistics (BLS). *Survey of Occupational Injuries and Illnesses.* Annual release.
+> BLS tracks median days-away-from-work by event type; lockout/tagout incidents consistently rank among the highest for lost workdays.
+> Available at: bls.gov/iif
+
+**[3] ~425,000 HVAC service calls per day (derived estimate)**
+> *Note: This is a derived figure, not a direct citation.*
+> Based on: BLS Occupational Outlook Handbook, "Heating, Air Conditioning, and Refrigeration Mechanics and Installers" — approximately 374,000–425,000 technicians employed in the US (2023 estimate), multiplied by industry-standard average of ~1.1–1.2 field dispatches per technician per day.
+> Available at: bls.gov/ooh/installation-maintenance-and-repair/heating-air-conditioning-and-refrigeration-mechanics-and-installers.htm
+
+---
+
+#### Knowledge Access & Productivity
+
+**[4] Workers spend 1.8 hours per day searching for information**
+> McKinsey Global Institute. *The Social Economy: Unlocking Value and Productivity Through Social Technologies.* July 2012.
+> Direct quote: *"Employees spend 1.8 hours every day — 9.3 hours per week, on average — searching for and gathering information."*
+> Available at: mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy
+
+---
+
+#### Regulatory Standards (Used in the Knowledge Base)
+
+**[5] OSHA 29 CFR 1910.147 — Control of Hazardous Energy (Lockout/Tagout)**
+> The primary OSHA standard governing energy isolation procedures for HVAC and industrial equipment servicing.
+> Available at: osha.gov/laws-regs/regulations/standardnumber/1910/1910.147
+
+**[6] OSHA 29 CFR 1910.303 — Electrical Safety: General Requirements**
+> Covers wiring design, protection, and hazard labeling for electrical equipment.
+> Available at: osha.gov/laws-regs/regulations/standardnumber/1910/1910.303
+
+**[7] OSHA 29 CFR 1926.452 — Scaffolds: General Requirements**
+> Used in the drone inspection domain (Phase 2) as a compliance reference for structural safety thresholds.
+> Available at: osha.gov/laws-regs/regulations/standardnumber/1926/1926.452
+
+---
+
+#### Research Foundation
+
+**[8] MAGMA: Multi-Graph Agentic Memory Architecture**
+> Jiang et al. *MAGMA: Multi-Graph Agentic Memory Architecture.* arXiv preprint, January 2026.
+> Describes reasoning across four graph dimensions — Semantic (WHAT), Temporal (WHEN), Causal (WHY), Entity (WHO/WHERE) — as a framework for agentic memory beyond standard vector search.
+
+---
+
+#### Project-Internal Results
+
+**[9] Evaluation metrics (94% accuracy, <2% hallucination, 80% conflict detection, ~5ms classifier)**
+> Author's own evaluation suite. Test sets: `eval/ground_truth.json` (50 cases), `eval/adversarial.json` (20 cases), `eval/contradictions.json` (15 cases). Results saved to `eval/eval_results.csv`.
+> Methodology: queries scored against labeled expected routes (HIGH / PARTIAL / LOW). Hallucination defined as a HIGH-routed answer with no grounding citation match.
+
+**[10] Equipment manuals referenced**
+> Carrier Corporation. *48LC Series Packaged Rooftop Units — Installation and Service Manual.* 2017 and 2023 editions.
+> Lennox International. *SL280 Series Gas Furnace — Service and Application Manual.*
+> Trane Technologies. *XR15 Series — Product Data and Service Manual.*

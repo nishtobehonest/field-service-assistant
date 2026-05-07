@@ -543,6 +543,84 @@ Turn 2: "What about last month?"
     )
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 8. Knowledge stack
+# ─────────────────────────────────────────────────────────────────────────────
+st.markdown("---")
+st.subheader("🧰 Knowledge Stack")
+st.markdown("Technologies, frameworks, and concepts used to build this system end-to-end.")
+
+def _stack_item(name: str, detail: str) -> str:
+    return (
+        f'<div style="display:flex;align-items:baseline;gap:0.5rem;'
+        f'padding:0.3rem 0;border-bottom:1px solid {BORDER};">'
+        f'<span style="font-family:monospace;font-weight:700;color:{TEXT};'
+        f'font-size:0.88rem;white-space:nowrap;">{name}</span>'
+        f'<span style="font-size:0.8rem;color:{MUTED};line-height:1.4;">{detail}</span>'
+        f'</div>'
+    )
+
+def _stack_card(label: str, emoji: str, items: list, bg: str = "#F8FAFC") -> str:
+    rows = "".join(_stack_item(n, d) for n, d in items)
+    return (
+        f'<div style="background:{bg};border:1.5px solid {BORDER};border-radius:10px;'
+        f'padding:0.9rem 1.1rem;margin-bottom:0.75rem;">'
+        f'<p style="font-size:0.7rem;font-weight:800;letter-spacing:0.1em;'
+        f'text-transform:uppercase;color:{MUTED};margin:0 0 0.6rem 0;">{emoji} {label}</p>'
+        f'{rows}</div>'
+    )
+
+col_left, col_right = st.columns(2, gap="large")
+
+with col_left:
+    st.markdown(
+        _stack_card("AI / ML", "🤖", [
+            ("RAG pipeline",        "Retrieve → score → route before any LLM call"),
+            ("Confidence scoring",  "Cosine similarity, conflict detection, threshold gating"),
+            ("Graceful degradation","Three-path routing — HIGH / PARTIAL / LOW"),
+            ("Classifier agent",    "Rule-based (~5ms) + LLM fallback for ambiguous queries"),
+            ("Session memory",      "Entity tracking across multi-turn conversations"),
+            ("Structured output",   "LLM responses constrained to typed schemas"),
+            ("Swappable LLMs",      "Anthropic · OpenAI · Gemini via env-var provider"),
+        ], bg=GREEN_BG),
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        _stack_card("Embeddings & Vector Search", "🔍", [
+            ("sentence-transformers", "all-MiniLM-L6-v2 — 384-dim unit-normalized vectors"),
+            ("ChromaDB",              "Six separate collections; metadata filters for spatial search"),
+            ("LangChain",             "Document loading, chunking, langchain_chroma retriever"),
+        ]),
+        unsafe_allow_html=True,
+    )
+
+with col_right:
+    st.markdown(
+        _stack_card("Engineering", "⚙️", [
+            ("Python",           "Primary language — end-to-end pipeline and eval suite"),
+            ("Streamlit",        "6-page multi-domain walkthrough app with live session state"),
+            ("Evaluation suite", "85 labeled cases: ground truth, adversarial, contradictions"),
+            ("Synthetic data",   "50 HVAC + drone records generated via Claude API"),
+        ]),
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        _stack_card("Research & Concepts", "📐", [
+            ("MAGMA",            "Multi-Graph Agentic Memory — Temporal, Causal, Entity, Semantic graphs"),
+            ("Safety-critical AI","Designing for false-negative preference over false-positive"),
+            ("Domain knowledge", "OSHA 29 CFR 1910.147 · 1910.303 · 1926.452"),
+        ], bg=SECONDARY),
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        _stack_card("Domains", "🏗️", [
+            ("HVAC field service",       "Equipment manuals · OSHA LOTO · job history retrieval"),
+            ("Drone site inspection",    "Anomaly records · structural baselines · spatial zone filters"),
+            ("Domain-agnostic pipeline", "Swap corpus + classifier rules → new industry, same system"),
+        ]),
+        unsafe_allow_html=True,
+    )
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 7. Design principles
 # ─────────────────────────────────────────────────────────────────────────────
 st.markdown("---")

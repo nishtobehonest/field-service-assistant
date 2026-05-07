@@ -100,11 +100,31 @@ with content:
         unsafe_allow_html=True,
     )
 
+    # Persona card
+    st.markdown(
+        f"""
+        <div style="background:{SECONDARY};border:1.5px solid {BORDER};border-radius:10px;
+                    padding:0.9rem 1.15rem;margin:0 0 1.8rem 0;max-width:560px;">
+          <p style="font-size:0.72rem;font-weight:800;letter-spacing:0.11em;text-transform:uppercase;
+                    color:{ACCENT};margin:0 0 0.35rem 0;">Your persona for this walkthrough</p>
+          <p style="font-size:1.0rem;font-weight:700;color:{TEXT};margin:0 0 0.25rem 0;">
+            Marcus — HVAC Field Technician, 3 years in
+          </p>
+          <p style="font-size:0.88rem;color:{MUTED};line-height:1.6;margin:0;">
+            Mid-size mechanical contractor. On-site alone. No supervisor on call,
+            no searchable manual, no access to the job history system from the roof.
+            You need the right answer before you touch the unit.
+          </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
     # Hook
     st.markdown(
         f"""
         <p style="font-size:1.28rem;color:{TEXT};font-weight:700;margin:0 0 0.45rem 0;">
-          We built an AI that knows what it doesn't know.
+          I built an AI that knows what it doesn't know.
         </p>
         <p style="font-size:0.98rem;color:{MUTED};line-height:1.68;margin:0 0 1.5rem 0;
                   max-width:560px;">
