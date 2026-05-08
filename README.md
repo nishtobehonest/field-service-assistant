@@ -2,7 +2,7 @@
 
 > An AI assistant that gives frontline field workers instant access to expert knowledge — and knows when to say "I don't know."
 
-**Nishchay Vishwanath · May 2026**
+**Built during Cornell MEM · Nishchay Vishwanath · May 2026**
 
 `Phase 1 — HVAC ✅ Complete` &nbsp;|&nbsp; `Phase 2 — Drone Inspection 🔄 In Progress` &nbsp;|&nbsp; `Phase 3 — Multi-Graph 📋 Planned` &nbsp;|&nbsp; `Phase 4 — User Validation 👥 Planned`
 
