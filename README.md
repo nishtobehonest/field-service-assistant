@@ -2,9 +2,9 @@
 
 > An AI assistant that gives frontline field workers instant access to expert knowledge — and knows when to say "I don't know."
 
-**Cornell MEM Capstone · Nishchay Vishwanath · May 2026**
+**Nishchay Vishwanath · May 2026**
 
-`Phase 1 — HVAC ✅ Complete` &nbsp;|&nbsp; `Phase 2 — Drone Inspection 🔄 In Progress` &nbsp;|&nbsp; `Phase 3 — Multi-Graph 📋 Planned`
+`Phase 1 — HVAC ✅ Complete` &nbsp;|&nbsp; `Phase 2 — Drone Inspection 🔄 In Progress` &nbsp;|&nbsp; `Phase 3 — Multi-Graph 📋 Planned` &nbsp;|&nbsp; `Phase 4 — User Validation 👥 Planned`
 
 ---
 
@@ -187,7 +187,8 @@ Tested against 85 labeled cases across three test sets (HVAC domain, Phase 1):
 | **Phase 1** | HVAC field service | ✅ Complete | RAG pipeline, confidence scoring, graceful degradation, conflict detection, eval suite |
 | **Phase 2** | Drone site inspection | 🔄 In progress | Classifier agent, session memory, spatial zone filters, dual-domain Streamlit app |
 | **Phase 3** | Multi-domain + hybrid retrieval | 📋 Planned | Deployed URL, BM25+dense hybrid retrieval, longitudinal anomaly tracking, map layer, power grid domain |
-| **Phase 4** | MAGMA multi-graph backend | 🔭 Vision | Full Temporal / Causal / Entity graph reasoning (Jiang et al., 2026), tool-use agent loops |
+| **Phase 4** | User validation | 👥 Planned | Interview HVAC technicians and site inspectors; validate query patterns, confidence routing decisions, and escalation UX against real workflows; identify corpus gaps |
+| **Phase 5** | MAGMA multi-graph backend | 🔭 Vision | Full Temporal / Causal / Entity graph reasoning (Jiang et al., 2026), tool-use agent loops |
 
 **Phase 2 exit criteria:**
 - [ ] Classifier routes > 90% of queries by correct type
